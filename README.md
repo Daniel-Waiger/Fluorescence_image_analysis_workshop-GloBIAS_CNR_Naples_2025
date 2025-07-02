@@ -1,4 +1,221 @@
-<img width="100%" src="./docs/Fluorescence_image_analysis_course_Logo_CNR_Naples.png" alt="CNR Logo">
+<style>
+/* Sticky Navigation Bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-bottom: 3px solid #3498db;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    gap: 20px;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .navbar {
+    padding: 15px 0;
+  }
+}
+
+/* Adjust main content to account for fixed navbar */
+body {
+  padding-top: 0;
+}
+
+/* Workshop date highlight */
+.workshop-date {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+  border-left: 5px solid #c0392b;
+}
+
+/* Important notice styling */
+.important-notice {
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 5px solid #d35400;
+}
+
+/* Scroll to Top Button */
+#scrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+</style>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#fluorescence-image-analysis-workshop" class="nav-logo">🔬 CNR Workshop 2025</a>
+    
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="#learning-outcomes" class="nav-link">📚 Learning</a></li>
+      <li class="nav-item"><a href="#programme" class="nav-link">📅 Programme</a></li>
+      <li class="nav-item"><a href="#installation-requirements" class="nav-link">💻 Installation</a></li>
+      <li class="nav-item"><a href="#detailed-installation-instructions" class="nav-link">🔧 Setup Guide</a></li>
+      <li class="nav-item"><a href="#troubleshooting" class="nav-link">🆘 Help</a></li>
+    </ul>
+  </div>
+</nav>
+
+<button id="scrollToTop" onclick="scrollToTop()" title="Go to top">⬆️</button>
+
+<script>
+function toggleMobileMenu() {
+  const navMenu = document.getElementById('navMenu');
+  navMenu.classList.toggle('active');
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navMenu').classList.remove('active');
+    });
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});
+
+// Scroll to top functionality
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Show/hide scroll to top button
+window.addEventListener('scroll', function() {
+  const scrollBtn = document.getElementById('scrollToTop');
+  if (window.pageYOffset > 300) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+</script>
+
+<p align="center">
+  <img width="100%" src="./docs/Fluorescence_image_analysis_course_Logo_CNR_Naples.png" alt="CNR Logo">
 
 
 </p>
@@ -6,12 +223,12 @@
 # Fluorescence image analysis workshop
 **Introduction to BioImage Analysis for Microscopy - GloBIAS & CNR Naples 2025**
 
-
-**7-11 July 2025**  
-Consiglio Nazionale delle Ricerche (CNR)  
-Istituto degli endotipi, in oncologia, metabolismo e immunologia (IEOMI)  
-"G. SALVATORE"  
-Naples (Italy)
+<div class="workshop-date">
+  📅 <strong>7-11 July 2025</strong><br>
+  📍 Consiglio Nazionale delle Ricerche (CNR)<br>
+  Istituto degli endotipi, in oncologia, metabolismo e immunologia (IEOMI)<br>
+  "G. SALVATORE" - Naples (Italy)
+</div>
 
 **Local organizers:**  
 Domenico Russo, Simone Di Paola, Seetharaman Parashuraman (CNR, Naples)
@@ -133,7 +350,9 @@ Friday 11th July 2025
 # Preparation for the course
 ## Installation Requirements
 
-> **⚠️ Important**: Please complete all software installations before the workshop begins. We'll have limited time for troubleshooting during sessions.
+<div class="important-notice">
+  ⚠️ <strong>Important:</strong> Please complete all software installations before the workshop begins. We'll have limited time for troubleshooting during sessions.
+</div>
 
 ### Prerequisites
 - **Hardware**: Minimum 10-15 GB free disk space
@@ -265,3 +484,9 @@ If you encounter issues during installation:
 
 - **Technical questions**: Contact workshop trainers via [GitHub issues](https://github.com/your-repo/issues)
 - **Workshop logistics**: Contact local organizers - Domenico Russo, Simone Di Paola, Seetharaman Parashuraman
+
+---
+
+*📧 For questions about this workshop, please contact the local organizers or open an issue in this repository.*
+
+*🌟 This website is powered by GitHub Pages with a custom responsive navigation system.*

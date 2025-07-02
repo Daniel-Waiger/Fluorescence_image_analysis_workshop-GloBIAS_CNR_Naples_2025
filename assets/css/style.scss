@@ -1,0 +1,260 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom Sticky Navigation Bar for GitHub Pages */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-bottom: 3px solid #3498db;
+  margin-bottom: 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #ecf0f1 !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.nav-logo:hover {
+  color: #3498db !important;
+  text-decoration: none !important;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #ecf0f1 !important;
+  text-decoration: none !important;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  background: #3498db !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Workshop date highlight */
+.workshop-date {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white !important;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 25px 0;
+  border-left: 5px solid #c0392b;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.workshop-date strong {
+  font-size: 1.3em;
+}
+
+/* Important notice styling */
+.important-notice {
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: white !important;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 25px 0;
+  border-left: 5px solid #d35400;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+/* Enhanced Table Styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  color: white !important;
+  padding: 15px 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+table tr:hover {
+  background-color: #e3f2fd;
+}
+
+/* Enhanced Checkboxes for Installation Lists */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+  accent-color: #3498db;
+}
+
+/* Code blocks enhancement */
+pre {
+  background: #2c3e50 !important;
+  color: #ecf0f1 !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  border-left: 4px solid #3498db !important;
+  overflow-x: auto;
+}
+
+code {
+  background: #34495e !important;
+  color: #ecf0f1 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    gap: 20px;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem !important;
+    padding: 15px 30px !important;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .navbar {
+    padding: 15px 0;
+  }
+  
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .workshop-date {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  
+  .important-notice {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  
+  table {
+    font-size: 0.85em;
+  }
+  
+  table th, table td {
+    padding: 8px 5px;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust main content spacing */
+.container {
+  padding-top: 20px;
+}
+
+/* Enhanced headings */
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 80px; /* Account for sticky navbar */
+}
+
+/* Link styling improvements */
+a {
+  color: #3498db;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+/* Button-like links for downloads */
+.download-link {
+  display: inline-block;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.download-link:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
