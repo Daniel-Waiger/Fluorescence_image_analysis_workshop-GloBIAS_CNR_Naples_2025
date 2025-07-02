@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-/* Custom Sticky Navigation Bar for GitHub Pages */
+/* Complete Sticky Navigation Bar for GitHub Pages */
 .navbar {
   position: sticky;
   top: 0;
@@ -74,9 +74,34 @@
   padding: 5px;
 }
 
+/* Scroll to Top Button */
+#scrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white !important;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
 /* Workshop date highlight */
 .workshop-date {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  background: linear-gradient(45deg, #e74c3c, #c0392b) !important;
   color: white !important;
   padding: 20px;
   border-radius: 10px;
@@ -88,11 +113,12 @@
 
 .workshop-date strong {
   font-size: 1.3em;
+  color: white !important;
 }
 
 /* Important notice styling */
 .important-notice {
-  background: linear-gradient(45deg, #f39c12, #e67e22);
+  background: linear-gradient(45deg, #f39c12, #e67e22) !important;
   color: white !important;
   padding: 20px;
   border-radius: 10px;
@@ -112,7 +138,7 @@ table {
 }
 
 table th {
-  background: linear-gradient(135deg, #34495e, #2c3e50);
+  background: linear-gradient(135deg, #34495e, #2c3e50) !important;
   color: white !important;
   padding: 15px 10px;
   text-align: left;
@@ -221,8 +247,8 @@ html {
 }
 
 /* Adjust main content spacing */
-.container {
-  padding-top: 20px;
+body {
+  padding-top: 0;
 }
 
 /* Enhanced headings */
