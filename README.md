@@ -1,5 +1,4 @@
-<p align="center">**Training delivered by:**  
-[Rocco D'Antuono](https://github.com/RoccoDAnt) (The Francis Crick Institute, London, UK), [Ana Stojiljkovic](https://github.com/StojiljkovicVetAna) (University of Bern, Switzerland), [Sebastian Gonzalez Tirado](https://github.com/sebgoti) (Heidelberg University, Germany), [Daniel Waiger](https://github.com/Daniel-Waiger) (Hebrew University of Jerusalem, Rehovot, Israel).  <img width="100%" src="./docs/Fluorescence_image_analysis_course_Logo_CNR_Naples.png" alt="CNR Logo">
+<img width="100%" src="./docs/Fluorescence_image_analysis_course_Logo_CNR_Naples.png" alt="CNR Logo">
 
 
 </p>
